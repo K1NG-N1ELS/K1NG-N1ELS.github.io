@@ -20,7 +20,7 @@ themeToggleButton.addEventListener('click', () => {
         themeToggleButton.textContent = '☀️';
         localStorage.setItem('theme', 'light-mode'); // Sauvegarde le thème clair
     } else {
-        themeToggleButton.textContent = '🌑';
+        themeToggleButton.textContent = '🌙'; // Corrigé l'émoji de lune
         localStorage.removeItem('theme'); // Le mode sombre est le défaut, on retire la clé
     }
 });

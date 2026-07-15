@@ -12,6 +12,8 @@ body {
     padding: 0;
     background-color: #111;
     color: var(--light);
+    scroll-behavior: smooth;
+    /* Permet un défilement fluide lors des clics sur le menu */
 }
 
 .container {
@@ -45,7 +47,7 @@ header {
 
 .header-title {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 15px;
 }
@@ -73,6 +75,31 @@ header p {
 .location {
     font-size: 0.9em;
     color: #38bdf8;
+}
+
+/* --- Barre de navigation horizontale --- */
+.nav-menu {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.nav-menu a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-menu a:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
 .badge {
@@ -160,17 +187,27 @@ body.light-mode header p {
 
 body.light-mode .location {
     color: #38bdf8;
-    /* Garde la couleur bleue en mode clair */
 }
 
 body.light-mode .profile-picture {
     border-color: var(--dark);
-    /* Change la bordure en noir en mode clair */
 }
 
 body.light-mode h2 {
     color: var(--dark);
     border-bottom-color: var(--dark);
+}
+
+body.light-mode .nav-menu a {
+    color: var(--dark);
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .nav-menu a:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
 }
 
 body.light-mode .card {
@@ -202,12 +239,15 @@ body.light-mode footer a {
 
     .header-content {
         order: 2;
-        /* Puts the text below the image */
         text-align: center;
     }
 
     .profile-picture {
         order: 1;
-        /* Puts the image on top */
+    }
+
+    .nav-menu {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
